@@ -12,8 +12,8 @@
 #  updated_at :datetime         not null
 #
 class Item < ApplicationRecord
-    validate_presence_of :pokemon_id, :name, :price, :happiness, :image_url
-    validates :name, length: {maxiumum: 254}
+    validates_presence_of :pokemon_id, :name, :price, :happiness, :image_url
+    validates :name, length: {maximum: 254}
     validates :price, numericality: {greater_than_or_equal_to: 0}
 
     belongs_to :pokemon,
